@@ -1,0 +1,79 @@
+/* This is where the default styles for your application can be defined */
+
+/* Set the base font and background color for the entire app */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f7fafc;
+}
+
+/* Center align the content in the container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Style the input and button for the YouTube URL */
+input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* Add some spacing between input and button */
+input[type="text"] + button {
+  margin-top: 0.5rem;
+}
+
+/* Style the "Download Thumbnails" button */
+.btn-blue {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-blue:hover {
+  background-color: #2680c5;
+}
+
+/* Style the thumbnail options */
+.thumbnail-option {
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+  text-align: center;
+  transition: box-shadow 0.2s;
+}
+
+.thumbnail-option:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the images within thumbnail options */
+.thumbnail-option img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style the "Copy Image URL" button */
+.thumbnail-option button {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.thumbnail-option button:hover {
+  background-color: #2680c5;
+}
