@@ -1,9 +1,11 @@
 import "../styles/index.css";
 import { Fragment } from "react";
 import { DefaultSeo } from "next-seo";
+import {Analytics} from '@vercel/analytics/react';
 
 function MyApp({ Component, pageProps }) {
   return (
+    <>
     <Fragment>
       <DefaultSeo
         title="Youtube Thumbnail Downloader"
@@ -18,6 +20,8 @@ function MyApp({ Component, pageProps }) {
       />
       <Component {...pageProps} />
     </Fragment>
+    <Analytics />
+    </>
   );
 }
 
