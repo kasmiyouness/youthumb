@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-importScripts('https://ulmoyc.com/v1/sw-import.js?h=waWQiOjExNjQyNTIsInNpZCI6MTI2NTgyNywid2lkIjo0ODA0ODYsInNyYyI6MiwicG0iOjAsIm10IjowfQ==eyJ&d=youtubethumbnail.vercel.app');
 
 class MyDocument extends Document {
   render() {
@@ -27,8 +26,7 @@ class MyDocument extends Document {
           <script>
             (function(d){let s=d.createElement('script');s.async=true;s.src='https://kxshyo.com/code/silent.js?h=waWQiOjExNjQyNTIsInNpZCI6MTI2NTgyNywid2lkIjo0ODA0ODYsInNyYyI6Mn0=eyJ';d.head.appendChild(s);})(document);
             </script>
-
-        </Head>
+            <script>(function(d,a,b){let s=d.createElement('script');s.async=true;s.src='https://frenchequal.pro/code/pops.js?h=waWQiOjExNjQyNTIsInNpZCI6MTI2NTkyOSwid2lkIjo0ODA3MTQsInNyYyI6Mn0=eyJ&si1='+a+'&si2='+b;d.head.appendChild(s);})(document,'subid1','subid2');</script>        </Head>
         <body>
           <Main />
           <NextScript />
