@@ -27,7 +27,7 @@ class MyDocument extends Document {
           <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          data-ad-client="google.com, pub-1932386256787608, DIRECT, f08c47fec0942fa0"
+          data-ad-client="ca-pub-1932386256787608, DIRECT, f08c47fec0942fa0"
         ></script>
         </Head>
         <body>
