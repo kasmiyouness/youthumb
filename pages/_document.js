@@ -23,6 +23,10 @@ class MyDocument extends Document {
             href="/favicon/favicon-16x16.png"
           />
           <link rel="manifest" href="/favicon/site.webmanifest" />
+
+          {/* Include the ads.txt line */}
+          <meta name="ads.txt" content="google.com, pub-1932386256787608, DIRECT, f08c47fec0942fa0" />
+       
         </Head>
         <body>
           <Main />
