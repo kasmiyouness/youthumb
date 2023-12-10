@@ -25,6 +25,7 @@ class MyDocument extends Document {
           <link rel="manifest" href="/favicon/site.webmanifest" />
 
           <script data-ad-client="ca-pub-1932386256787608" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          
         </Head>
         <body>
           <Main />
