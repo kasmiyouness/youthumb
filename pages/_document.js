@@ -24,9 +24,11 @@ class MyDocument extends Document {
           />
           <link rel="manifest" href="/favicon/site.webmanifest" />
 
-          {/* Include the ads.txt line */}
-          <meta name="ads.txt" content="google.com, pub-1932386256787608, DIRECT, f08c47fec0942fa0" />
-       
+          <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          data-ad-client="google.com, pub-1932386256787608, DIRECT, f08c47fec0942fa0"
+        ></script>
         </Head>
         <body>
           <Main />
