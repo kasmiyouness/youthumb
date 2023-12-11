@@ -1,7 +1,7 @@
 // pages/ads.txt.js
 const AdsTxt = () => null;
 
-export const getServerSideProps = ({ res }) => {
+AdsTxt.getInitialProps = ({ res }) => {
   // Your actual ads.txt content
   const adsTxtContent = `
   google.com, pub-1932386256787608, DIRECT, f08c47fec0942fa0
