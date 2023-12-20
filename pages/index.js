@@ -41,7 +41,6 @@ const Index = () => {
         { resolution: "SD (640x480)", code: "sddefault" },
         { resolution: "Normal (480x360)", code: "hqdefault" },
         { resolution: "Medium (320x180)", code: "mqdefault" },
-        { resolution: "Low (120x90)", code: "default" },
       ];
 
       const thumbnailOptions = options.map((option) => ({
