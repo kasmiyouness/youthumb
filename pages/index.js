@@ -1,15 +1,38 @@
 import { useState } from "react";
 import copy from "copy-to-clipboard";
+import Link from "next/link";
+import Footer from "../components/footer/footer";
+import Header from "../components/Navbar/Navbar";
+
 
 const Index = () => {
   const [videoURL, setVideoURL] = useState("");
   const [thumbnailOptions, setThumbnailOptions] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const getYouTubeThumbnail = (url) => {
-    let regExp = /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
-    let match = url.match(regExp);
+  const isValidYouTubeURL = (url) => {
+    // Regular expression for YouTube video URL validation
+    const regExp = /^(https?\:\/\/)?(www\.youtube\.com|youtube\.com|youtu\.be)\/.+$/;
+    return regExp.test(url);
+  };
 
-    if (match && match[1].length === 11) {
+  const getYouTubeThumbnail = async (url) => {
+    setError("");
+    setLoading(true);
+
+    try {
+      if (!isValidYouTubeURL(url)) {
+        throw new Error("Invalid YouTube URL. Please enter a valid URL.");
+      }
+
+      let regExp = /.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/;
+      let match = url.match(regExp);
+
+      if (!match || match[1].length !== 11) {
+        throw new Error("Invalid YouTube URL. Please enter a valid URL.");
+      }
+
       const videoURL = match[1];
       const thumbnailBaseUrl = "http://img.youtube.com/vi/";
 
@@ -28,9 +51,27 @@ const Index = () => {
 
       setThumbnailOptions(thumbnailOptions);
       setVideoURL("");
-    } else {
-      setThumbnailOptions([]);
+    } catch (error) {
+      setError(error.message);
+    } finally {
+      setLoading(false);
     }
+  };
+
+  const handleDownload = (url) => {
+    // Create a temporary link element
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "thumbnail.jpg";
+    
+    // Append the link to the document
+    document.body.appendChild(link);
+
+    // Trigger the click event to start the download
+    link.click();
+
+    // Remove the link from the document
+    document.body.removeChild(link);
   };
 
   return (
@@ -54,9 +95,15 @@ const Index = () => {
         <button
           className="btn-blue mt-2"
           onClick={() => getYouTubeThumbnail(videoURL)}
+          disabled={loading}
         >
-          Download Thumbnails
+          {loading ? "Fetching Thumbnails..." : "Download Thumbnails"}
         </button>
+        {error && (
+          <p className="text-red-500 mt-2" style={{ color: 'red' }}>
+            {error}
+          </p>
+        )}
       </div>
       {thumbnailOptions.length > 0 && (
         <div className="mt-8">
@@ -65,12 +112,20 @@ const Index = () => {
             {thumbnailOptions.map((option, index) => (
               <div key={index} className="thumbnail-option">
                 <img src={option.url} alt={`Thumbnail ${index + 1}`} />
-                <button
-                  className="btn-blue mt-2"
-                  onClick={() => copy(option.url)}
-                >
-                  Copy Image URL
-                </button>
+                <div className="flex mt-2">
+                  <button
+                    className="btn-blue mr-2"
+                    onClick={() => copy(option.url)}
+                  >
+                    Copy Image URL
+                  </button>
+                  <button
+                    className="btn-green"
+                    onClick={() => handleDownload(option.url)}
+                  >
+                    Download
+                  </button>
+                </div>
               </div>
             ))}
           </div>
